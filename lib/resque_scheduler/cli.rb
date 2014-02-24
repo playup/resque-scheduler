@@ -115,7 +115,7 @@ module ResqueScheduler
       end
 
       File.open(options[:pidfile], 'w') do |f|
-        f.puts $PROCESS_ID
+        f.puts Process.pid
       end if options[:pidfile]
 
       Resque::Scheduler.configure do |c|
